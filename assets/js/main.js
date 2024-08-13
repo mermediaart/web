@@ -241,3 +241,7 @@ document.querySelectorAll(".portfolio-content").forEach((item) => {
     this.classList.add("clicked");
   });
 });
+
+
+
+
