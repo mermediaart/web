@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -37,8 +37,6 @@
         <img src="assets/img/mermedia.png" title="Logo Mermedia - Home" alt="logo mermedia" class="img-fluid">
       </a>
     </div>
-
-
 
     <div class="social-links text-center">
       <a href="https://www.youtube.com/@mermediaart/" class="youtube"><i class="bi bi-youtube"></i></a>
@@ -65,11 +63,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0"> Fusion</h1>
+        <h1 class="mb-2 mb-lg-0">Experimentos Fotográficos</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li class="current">Fusion</li>
+            <li class="current">Experimentos Fotográficos</li>
           </ol>
         </nav>
       </div>
@@ -82,45 +80,69 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-5">
-            <!-- Contenedor para el canvas p5.js -->
-            <div id="contenedor-fusion">
-              <!-- El canvas será añadido aquí por p5.js -->
+          <div class="col-lg-10">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="gallery-container">
+                <div class="gallery-item">
+                  <img src="assets/img/foto/autorretratos/exposicion-1.jpg" class="glightbox preview-link" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/img/foto/autorretratos/exposicion-2.jpg" class="glightbox preview-link" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/img/foto/autorretratos/exposicion-3.jpg" class="glightbox preview-link" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/img/foto/autorretratos/cati-1.jpg" class="glightbox preview-link" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/img/foto/autorretratos/cati-2.jpg" class="glightbox preview-link" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/img/foto/autorretratos/self-1.jpg" class="glightbox preview-link" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/img/foto/autorretratos/self-2.jpg" class="glightbox preview-link" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/img/foto/autorretratos/self-3.jpg" class="glightbox preview-link" loading="lazy">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
 
-          <div class="col-lg-6">
-
+          <div class="col-lg-12">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h2>Fusion</h2>
-
-
-              <p>
-                Obra de arte interactiva inspirada en el trabajo de Daniel Shiffman y creada con la herramienta
-                de programación visual Processing. Esta instalación digital lleva a los espectadores a un fascinante
-                viaje a través del mundo de las partículas, donde la interacción del mouse desencadena un
-                baile de formas circulares.
-              </p>
-            </div>
-
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
               <h5>Información General</h5>
               <ul>
-                <li><strong>Categoría</strong>: App interactiva</li>
-                <li><strong>Técnica</strong>: Programación JavaScript - Librería P5js</li>
-                <li><strong>Fecha de creación</strong>: Mayo, 2022</li>
-              
+                <li><strong>Categoría</strong>: Fotografía</li>
+                <li><strong>Fecha de creación</strong>: 2022</li>
               </ul>
             </div>
-            
-           
           </div>
         </div>
 
       </div>
 
     </section><!-- /Portfolio Details Section -->
-
 <!-- Slider Container -->
 <div class="container">
   <div class="recommended-slider">
@@ -137,7 +159,6 @@
 </div>
 
   </main>
-
 
   <footer id="footer" class="footer position-relative light-background">
 
@@ -158,23 +179,20 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/js/fusion.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
- <!-- Main JS File -->
- <script src="assets/js/main.js"></script>
- <script src="assets/js/sliderswiper.js"></script>
-
+   <!-- Main JS File -->
+   <script src="assets/js/main.js"></script>
+   <script src="assets/js/sliderswiper.js"></script>
 </body>
 
 </html>
