@@ -57,12 +57,12 @@ body {
 
 a {
   color: var(--accent-color);
-  text-decoration: none;
+  text-decoration: none !important; 
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: color-mix(in srgb, var(--accent-color), transparent 20%)!important; 
   text-decoration: none;
 }
 
@@ -939,8 +939,6 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo del botón */
-  border-radius: 50%; /* Para hacer el botón circular */
   color: white;
   cursor: pointer;
 }
