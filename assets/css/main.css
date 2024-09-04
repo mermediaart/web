@@ -639,8 +639,10 @@ section,
   }
 }
 .more-portfolio-items {
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 
 /* Personaliza la galería para mostrar 4 columnas en pantallas grandes */
 .isotope-container {
