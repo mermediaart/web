@@ -700,7 +700,7 @@ section,
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alinea el contenido al inicio del eje principal (vertical) */
+  justify-content: flex-end; /* Alinea el contenido al final del eje principal (vertical) */
   align-items: flex-start; /* Alinea el contenido al inicio del eje transversal (horizontal) */
   text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
   box-sizing: border-box; /* Incluye el padding en el cálculo del ancho y alto */
