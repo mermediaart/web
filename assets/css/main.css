@@ -690,6 +690,62 @@ section,
 .portfolio .portfolio-content .portfolio-info {
   opacity: 0; /* Inicialmente oculto */
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.4); /* Fondo oscuro en pantallas grandes */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea el contenido al inicio del eje principal (vertical) */
+  align-items: flex-start; /* Alinea el contenido al inicio del eje transversal (horizontal) */
+  text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho y alto */
+}
+
+/* Mostrar la información en pantallas móviles */
+@media (max-width: 600px) {
+  .portfolio .portfolio-content .portfolio-info {
+    opacity: 1; /* Siempre visible en pantallas móviles */
+    background: rgba(0, 0, 0, 0.0); /* Sin opacidad de fondo en móviles */
+    position: static; /* Permite que el contenido se mueva con el flujo normal del documento */
+    padding: 10px; /* Ajusta el padding si es necesario para el diseño en pantallas pequeñas */
+    margin: 10px; /* Añade margen para que no esté pegado a los bordes */
+  }
+}
+
+.portfolio .portfolio-content:hover .portfolio-info {
+  opacity: 0.8; /* Menos oscuro al hacer hover en pantallas grandes */
+}
+
+.portfolio .portfolio-content:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio .portfolio-content .portfolio-info h4 {
+  font-size: 14px;
+  padding: 5px 10px;
+  font-weight: 400;
+  color: #ffffff;
+  display: inline-block;
+  background-color: var(--accent-color);
+  z-index: 4;
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Información del portfolio */
+.portfolio .portfolio-content .portfolio-info {
+  opacity: 0; /* Inicialmente oculto */
+  position: absolute;
   inset: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
