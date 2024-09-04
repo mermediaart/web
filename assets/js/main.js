@@ -130,10 +130,20 @@
   /**
    * Init isotope layout and filters
    */
+  document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".isotope-layout").forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute("data-layout") ?? "masonry";
     let filter = isotopeItem.getAttribute("data-default-filter") ?? "*";
     let sort = isotopeItem.getAttribute("data-sort") ?? "original-order";
+
+    // Verificar si hay un hash en la URL y actualizar el filtro predeterminado
+    let hash = window.location.hash;
+    if (hash) {
+      let filterFromHash = document.querySelector(hash);
+      if (filterFromHash) {
+        filter = filterFromHash.getAttribute("data-filter") ?? "*";
+      }
+    }
 
     let initIsotope;
     imagesLoaded(isotopeItem.querySelector(".isotope-container"), function () {
@@ -148,27 +158,30 @@
       );
     });
 
-    isotopeItem
-      .querySelectorAll(".isotope-filters li")
-      .forEach(function (filters) {
-        filters.addEventListener(
-          "click",
-          function () {
-            isotopeItem
-              .querySelector(".isotope-filters .filter-active")
-              .classList.remove("filter-active");
-            this.classList.add("filter-active");
-            initIsotope.arrange({
-              filter: this.getAttribute("data-filter"),
-            });
-            if (typeof aosInit === "function") {
-              aosInit();
-            }
-          },
-          false
-        );
-      });
+    isotopeItem.querySelectorAll(".isotope-filters li").forEach(function (filters) {
+      filters.addEventListener(
+        "click",
+        function () {
+          isotopeItem
+            .querySelector(".isotope-filters .filter-active")
+            .classList.remove("filter-active");
+          this.classList.add("filter-active");
+          initIsotope.arrange({
+            filter: this.getAttribute("data-filter"),
+          });
+          if (typeof aosInit === "function") {
+            aosInit();
+          }
+
+          // Actualizar el hash en la URL sin recargar la página
+          window.location.hash = this.id;
+        },
+        false
+      );
+    });
   });
+});
+
 
   /**
    * Init swiper sliders
