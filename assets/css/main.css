@@ -675,6 +675,17 @@ section,
   background-color: #f0f0f0; /* Fondo gris claro para resaltar las imágenes */
 }
 
+/* Imagen del portfolio */
+.portfolio .portfolio-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el área cuadrada sin distorsión */
+  transition: 0.3s;
+}
+
 /* Información del portfolio */
 .portfolio .portfolio-content .portfolio-info {
   opacity: 0; /* Inicialmente oculto */
@@ -686,9 +697,10 @@ section,
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Alinea al final del eje principal (horizontal) */
+  justify-content: flex-start; /* Alinea al inicio del eje principal (horizontal) */
   align-items: flex-start; /* Alinea al inicio del eje transversal (vertical) */
   text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho y alto */
 }
 
 /* Mostrar la información en pantallas móviles */
@@ -702,6 +714,7 @@ section,
     display: flex; /* Asegura que el contenedor sea flexible */
     flex-direction: column; /* Organiza los elementos en una columna */
     align-items: flex-start; /* Alinea el contenido a la izquierda superior */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho y alto */
   }
 }
 
@@ -728,6 +741,7 @@ section,
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
 }
+
 
 .portfolio .portfolio-content .portfolio-info .preview-link,
 .portfolio .portfolio-content .portfolio-info .details-link {
