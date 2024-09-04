@@ -647,19 +647,19 @@ section,
   grid-gap: 20px; /* Espacio entre elementos */
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .isotope-container {
     grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .isotope-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
   }
 }
 
-@media (max-width: 200px) {
+@media (max-width: 400px) {
   .isotope-container {
     grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
   }
@@ -695,6 +695,18 @@ section,
   transition: all ease-in-out 0.3s;
   background: rgba(0, 0, 0, 0.6);
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Mostrar la información en pantallas móviles */
+@media (max-width: 600px) {
+  .portfolio .portfolio-content .portfolio-info {
+    opacity: 1;
+  }
 }
 
 .portfolio .portfolio-content:hover .portfolio-info {
