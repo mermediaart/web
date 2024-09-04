@@ -647,19 +647,19 @@ section,
   grid-gap: 20px; /* Espacio entre elementos */
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
   .isotope-container {
     grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .isotope-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 200px) {
   .isotope-container {
     grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
   }
