@@ -690,15 +690,16 @@ section,
 .portfolio .portfolio-content .portfolio-info {
   opacity: 0; /* Inicialmente oculto */
   position: absolute;
-  inset: 0; /* Usa 'inset' para simplificar el posicionamiento */
+  bottom: 0; /* Alineado a la parte inferior */
+  left: 0;
+  right: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
   background: rgba(0, 0, 0, 0.4); /* Fondo oscuro en pantallas grandes */
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Alinea el contenido al final del eje principal (vertical) */
-  align-items: flex-start; /* Alinea el contenido al inicio del eje transversal (horizontal) */
+  align-items: flex-start; /* Alinea al inicio del eje transversal (horizontal) */
   text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
   box-sizing: border-box; /* Incluye el padding en el cálculo del ancho y alto */
 }
@@ -708,13 +709,8 @@ section,
   .portfolio .portfolio-content .portfolio-info {
     opacity: 1; /* Siempre visible en pantallas móviles */
     background: rgba(0, 0, 0, 0.0); /* Sin opacidad de fondo en móviles */
-    position: static; /* Permite que el contenido se mueva con el flujo normal del documento */
     padding: 10px; /* Ajusta el padding si es necesario para el diseño en pantallas pequeñas */
-    margin: 10px; /* Añade margen para que no esté pegado a los bordes */
-    display: flex; /* Asegura que el contenedor sea flexible */
-    flex-direction: column; /* Organiza los elementos en una columna */
-    align-items: flex-start; /* Alinea el contenido a la izquierda superior */
-    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho y alto */
+    margin: 0; /* Elimina el margen para ajustarse al contenedor */
   }
 }
 
@@ -763,6 +759,7 @@ section,
   font-size: 34px;
   line-height: 0;
 }
+
 
 
 .video-thumbnail {
