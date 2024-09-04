@@ -685,7 +685,6 @@ section,
   object-fit: cover; /* Asegura que la imagen cubra el área cuadrada sin distorsión */
   transition: 0.3s;
 }
-
 /* Información del portfolio */
 .portfolio .portfolio-content .portfolio-info {
   opacity: 0;
@@ -693,7 +692,7 @@ section,
   inset: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4); /* Menos oscuro que antes */
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -705,17 +704,13 @@ section,
 /* Mostrar la información en pantallas móviles */
 @media (max-width: 600px) {
   .portfolio .portfolio-content .portfolio-info {
-    opacity: 1;
-    /* Asegúrate de que la información no cubra el contenido importante */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    opacity: 1; /* Siempre visible en pantallas móviles */
+    background: rgba(0, 0, 0, 0.0); /* Sin opacidad de fondo en móviles */
   }
 }
 
 .portfolio .portfolio-content:hover .portfolio-info {
-  opacity: 1;
+  opacity: 0.8; /* Menos oscuro al hacer hover */
 }
 
 .portfolio .portfolio-content:hover img {
@@ -723,12 +718,16 @@ section,
 }
 
 .portfolio .portfolio-content .portfolio-info h4 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   font-size: 14px;
   padding: 5px 10px;
   font-weight: 400;
   color: #ffffff;
   display: inline-block;
   background-color: var(--accent-color);
+  z-index: 4;
 }
 
 .portfolio .portfolio-content .portfolio-info p {
