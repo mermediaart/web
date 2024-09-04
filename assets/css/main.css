@@ -706,6 +706,11 @@ section,
 @media (max-width: 600px) {
   .portfolio .portfolio-content .portfolio-info {
     opacity: 1;
+    /* Asegúrate de que la información no cubra el contenido importante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -783,6 +788,7 @@ section,
 .portfolio-content.clicked .video-wrapper {
   display: block;
 }
+
 
 /*--------------------------------------------------------------
 # Portfolio Details Section
