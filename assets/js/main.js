@@ -185,19 +185,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const showMoreButton = document.getElementById('show-more');
+document.addEventListener('DOMContentLoaded', function() {
+  const showMoreBtn = document.getElementById('show-more-btn');
   const moreItems = document.querySelector('.more-portfolio-items');
-
-  showMoreButton.addEventListener('click', () => {
-    moreItems.classList.toggle('d-none');
+  
+  showMoreBtn.addEventListener('click', function() {
     if (moreItems.classList.contains('d-none')) {
-      showMoreButton.textContent = 'Mostrar más';
+      moreItems.classList.remove('d-none');
+      showMoreBtn.textContent = 'Mostrar menos';
     } else {
-      showMoreButton.textContent = 'Mostrar menos';
+      moreItems.classList.add('d-none');
+      showMoreBtn.textContent = 'Mostrar más';
     }
   });
 });
+
 
 
   /**
