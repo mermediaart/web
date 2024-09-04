@@ -49,6 +49,7 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -636,6 +637,9 @@ section,
     font-size: 14px;
     margin: 0 5px;
   }
+}
+.more-portfolio-items {
+  display: none;
 }
 
 /* Personaliza la galería para mostrar 4 columnas en pantallas grandes */
