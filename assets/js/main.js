@@ -185,47 +185,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Selecciona el botón y el contenedor de elementos adicionales
-  const showMoreBtn = document.getElementById('show-more-btn');
-  const moreItems = document.querySelector('.more-portfolio-items');
-  const filters = document.querySelectorAll('.portfolio-filters li');
-
-  // Función para mostrar los elementos adicionales solo si el filtro activo es "Todo"
-  function checkFilterAndToggleButton() {
-    const activeFilter = document.querySelector('.portfolio-filters .filter-active').getAttribute('data-filter');
-
-    if (activeFilter === '*') {
-      showMoreBtn.classList.remove('d-none');
-      moreItems.classList.add('d-none');
-    } else {
-      showMoreBtn.classList.add('d-none');
-      moreItems.classList.add('d-none');
-    }
-  }
-
-  // Inicializa la visibilidad del botón al cargar la página
-  checkFilterAndToggleButton();
-
-  // Maneja el clic en el botón "Mostrar más"
-  showMoreBtn.addEventListener('click', function() {
-    moreItems.classList.remove('d-none');
-    showMoreBtn.classList.add('d-none');
-  });
-
-  // Maneja el cambio de filtro
-  filters.forEach(filter => {
-    filter.addEventListener('click', function() {
-      // Desactiva el filtro anterior y activa el nuevo
-      filters.forEach(f => f.classList.remove('filter-active'));
-      this.classList.add('filter-active');
-
-      // Actualiza la visibilidad del botón basado en el filtro activo
-      checkFilterAndToggleButton();
+  //filtro boton
+document.addEventListener("DOMContentLoaded", function() {
+    const btn = document.getElementById('toggle-btn');
+    const content = document.getElementById('more-content');
+    let isCollapsed = true;
+    
+    btn.addEventListener('click', function() {
+        if (isCollapsed) {
+            content.style.display = 'block';
+            btn.textContent = 'Mostrar menos';
+        } else {
+            content.style.display = 'none';
+            btn.textContent = 'Mostrar más';
+        }
+        isCollapsed = !isCollapsed;
     });
-  });
 });
-
 
 
   /**
