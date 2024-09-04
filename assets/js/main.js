@@ -130,21 +130,13 @@
   /**
    * Init isotope layout and filters
    */
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".isotope-layout").forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute("data-layout") ?? "masonry";
     let filter = isotopeItem.getAttribute("data-default-filter") ?? "*";
     let sort = isotopeItem.getAttribute("data-sort") ?? "original-order";
 
-    // Verificar si hay un hash en la URL y actualizar el filtro predeterminado
-    let hash = window.location.hash;
-    if (hash) {
-      let filterFromHash = document.querySelector(hash);
-      if (filterFromHash) {
-        filter = filterFromHash.getAttribute("data-filter") ?? "*";
-      }
-    }
-
+    // Inicializar Isotope
     let initIsotope;
     imagesLoaded(isotopeItem.querySelector(".isotope-container"), function () {
       initIsotope = new Isotope(
@@ -156,31 +148,43 @@
           sortBy: sort,
         }
       );
+
+      // Verificar si hay un hash en la URL y aplicar el filtro correspondiente
+      let hash = window.location.hash.substring(1); // Obtener el hash sin el #
+      if (hash) {
+        let filterFromHash = document.querySelector(`#${hash}`);
+        if (filterFromHash) {
+          filter = filterFromHash.getAttribute("data-filter") ?? "*";
+          initIsotope.arrange({ filter: filter });
+          isotopeItem.querySelector(".isotope-filters .filter-active")?.classList.remove("filter-active");
+          filterFromHash.classList.add("filter-active");
+        }
+      }
     });
 
+    // Manejar el clic en los filtros
     isotopeItem.querySelectorAll(".isotope-filters li").forEach(function (filters) {
       filters.addEventListener(
         "click",
         function () {
-          isotopeItem
-            .querySelector(".isotope-filters .filter-active")
-            .classList.remove("filter-active");
+          isotopeItem.querySelector(".isotope-filters .filter-active")?.classList.remove("filter-active");
           this.classList.add("filter-active");
-          initIsotope.arrange({
-            filter: this.getAttribute("data-filter"),
-          });
+          let filterValue = this.getAttribute("data-filter");
+          initIsotope.arrange({ filter: filterValue });
+          
+          // Actualizar el hash en la URL
+          window.location.hash = this.id;
+          
           if (typeof aosInit === "function") {
             aosInit();
           }
-
-          // Actualizar el hash en la URL sin recargar la página
-          window.location.hash = this.id;
         },
         false
       );
     });
   });
 });
+
 
 
   /**
