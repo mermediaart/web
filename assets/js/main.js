@@ -185,6 +185,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const showMoreButton = document.getElementById('show-more');
+  const moreItems = document.querySelector('.more-portfolio-items');
+
+  showMoreButton.addEventListener('click', () => {
+    moreItems.classList.toggle('d-none');
+    if (moreItems.classList.contains('d-none')) {
+      showMoreButton.textContent = 'Mostrar más';
+    } else {
+      showMoreButton.textContent = 'Mostrar menos';
+    }
+  });
+});
 
 
   /**
