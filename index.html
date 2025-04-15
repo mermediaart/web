@@ -54,6 +54,50 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
+      <div class="draggable" style="top: 100px; left: 100px;">
+  <a href="oli.html" title="Olivia">
+    <img src="assets/img/foto/retratos/oli-1.jpg" alt="Olivia | Retrato" style="width: 200px; height: 150px; border-radius: 12px;">
+  </a>
+</div>
+<div class="draggable" style="top: 300px; left: 250px;">
+  <a href="superclasico.html" title="Super Clásico Store San Miguel">
+    <img src="assets/img/ilus/superclasico_boca2.jpg" alt="Super Clásico Store San Miguel | Diseño y RRSS" style="width: 200px; height: 150px; border-radius: 12px;">
+  </a>
+</div>
+<div class="draggable" style="top: 200px; left: 500px;">
+  <a href="klover.html" title="Klover | Flyers">
+    <img src="assets/img/ilus/1.png" alt="Klover | Flyers" style="width: 200px; height: 150px; border-radius: 12px;">
+  </a>
+</div>
+
+<script>
+  const draggables = document.querySelectorAll('.draggable');
+  draggables.forEach(el => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    el.addEventListener('mousedown', e => {
+      isDragging = true;
+      offsetX = e.clientX - el.getBoundingClientRect().left;
+      offsetY = e.clientY - el.getBoundingClientRect().top;
+      el.style.zIndex = 1000;
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        el.style.left = `${e.clientX - offsetX}px`;
+        el.style.top = `${e.clientY - offsetY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      el.style.zIndex = 10;
+    });
+  });
+</script>
+
+
       <!-- Video Element -->
       <video autoplay muted loop data-aos="fade-in" class="video-background">
         <source src="assets/videos/home.mp4" type="video/mp4">
@@ -78,9 +122,10 @@
       <div class="container section-title justify-content-center pb-0" data-aos="fade-up">
         <h2>Portfolio</h2>
 
-        <p>¡Hola! Soy Merlina, también conocida como "Mermedia", una artista multimedial. Mi enfoque principal es la fotografía y el video, que se combinan perfectamente en arte
-          instalativo o performático, especialmente en teatro. También me gusta integrar estos medios en trabajos con
-          código, como juegos u obras interactivas. </p>
+       <p class="mb-3">
+  Estudié Artes Multimediales en la UNA, donde exploré instalaciones, programación visual y VJing. Amo dirigir proyectos visuales: desde la identidad de una marca hasta la estética de una escena. Mi enfoque cruza el arte, el diseño y lo escénico. Trabajo de forma freelance con marcas, artistas y colectivos culturales. ¿Mi especialidad? Crear imágenes que conecten.
+</p>
+
       </div><!-- End Section Title -->
 
 
